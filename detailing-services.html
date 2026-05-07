@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailing Services - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1920') center/cover;
+            opacity: 0.2;
+        }
+        .page-hero h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+        }
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .package-card.featured {
+            border: 3px solid var(--gold-color);
+            transform: scale(1.05);
+        }
+        .package-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .package-card:nth-child(2) .package-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .package-card:nth-child(3) .package-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .package-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold-color);
+        }
+        .package-content {
+            padding: 2rem;
+        }
+        .package-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .package-content ul li {
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+        .package-content ul li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+        .process-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <h1 class="fade-in">Premium Detailing Services</h1>
+        <p class="fade-in" style="font-size: 1.3rem; position: relative; z-index: 1;">Restore Your Vehicle's Showroom Shine</p>
+    </section>
+
+    <section style="padding: 5rem 2rem;">
+        <h2 class="section-title">Detailing Packages</h2>
+        <div class="package-grid">
+            <div class="package-card scale-in">
+                <div class="package-header">
+                    <h3>Basic Detail</h3>
+                    <div class="package-price">$149</div>
+                </div>
+                <div class="package-content">
+                    <ul>
+                        <li>Exterior hand wash</li>
+                        <li>Wax application</li>
+                        <li>Interior vacuum</li>
+                        <li>Dashboard cleaning</li>
+                        <li>Window cleaning</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="package-card featured scale-in">
+                <div class="package-header">
+                    <h3>Premium Detail</h3>
+                    <div class="package-price">$299</div>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Most Popular</p>
+                </div>
+                <div class="package-content">
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>Paint correction</li>
+                        <li>Leather conditioning</li>
+                        <li>Engine bay cleaning</li>
+                        <li>Headlight restoration</li>
+                        <li>Interior deep clean</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="package-card scale-in">
+                <div class="package-header">
+                    <h3>Ultimate Detail</h3>
+                    <div class="package-price">$499</div>
+                </div>
+                <div class="package-content">
+                    <ul>
+                        <li>Everything in Premium</li>
+                        <li>Ceramic coating</li>
+                        <li>Paint protection film</li>
+                        <li>Full interior restoration</li>
+                        <li>Odor elimination</li>
+                        <li>1-year warranty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <h2 class="section-title">Our Detailing Process</h2>
+        <div class="process-steps">
+            <div class="process-step fade-in">
+                <div class="step-number">1</div>
+                <h3>Inspection</h3>
+                <p>Thorough assessment of your vehicle's condition</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">2</div>
+                <h3>Preparation</h3>
+                <p>Pre-wash and surface preparation</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">3</div>
+                <h3>Cleaning</h3>
+                <p>Deep cleaning inside and out</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">4</div>
+                <h3>Protection</h3>
+                <p>Wax, sealant, or ceramic coating</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">5</div>
+                <h3>Final Polish</h3>
+                <p>Quality check and final touches</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" class="fade-in">Ready for a Transformation?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;" class="fade-in">Book your detailing service today and see the difference</p>
+        <a href="book-appointment.html" class="btn" style="background: white; color: var(--primary-color);">Book Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
+

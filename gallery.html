@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .gallery-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .gallery-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        .gallery-overlay h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .before-after {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .comparison-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .comparison-card h3 {
+            padding: 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        .comparison-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        .comparison-images img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .comparison-label {
+            padding: 0.5rem;
+            text-align: center;
+            background: #f8f9fa;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="gallery-hero">
+        <h1 class="fade-in">Our Work Gallery</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Showcasing Excellence in Every Detail</p>
+    </section>
+
+    <section class="gallery-section">
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="detailing">Detailing</button>
+            <button class="filter-btn" data-filter="engine">Engine</button>
+            <button class="filter-btn" data-filter="accessories">Accessories</button>
+            <button class="filter-btn" data-filter="custom">Custom Work</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item scale-in" data-category="detailing">
+                <img src="WhatsApp Image 2026-01-26 at 11.49.07.jpeg" alt="Detailing Work">
+                <div class="gallery-overlay">
+                    <h3>Premium Detailing</h3>
+                    <p>Showroom-quality finish</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="engine">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800" alt="Engine Service">
+                <div class="gallery-overlay">
+                    <h3>Engine Service</h3>
+                    <p>Professional engine maintenance</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="accessories">
+                <img src="WhatsApp Image 2026-01-26 at 11.35.21.jpeg" alt="Accessories">
+                <div class="gallery-overlay">
+                    <h3>Custom Accessories</h3>
+                    <p>Personalized styling</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="detailing">
+                <img src="WhatsApp Image 2026-01-26 at 11.26.34.jpeg" alt="Interior Detailing">
+                <div class="gallery-overlay">
+                    <h3>Interior Detailing</h3>
+                    <p>Complete interior restoration</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="custom">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" alt="Custom Paint">
+                <div class="gallery-overlay">
+                    <h3>Custom Paint Job</h3>
+                    <p>Unique color schemes</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="engine">
+                <img src="WhatsApp Image 2026-01-26 at 11.39.43.jpeg" alt="Engine Repair">
+                <div class="gallery-overlay">
+                    <h3>Engine Repair</h3>
+                    <p>Expert diagnostics and repair</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="accessories">
+                <img src="WhatsApp Image 2026-01-26 at 11.30.10.jpeg" alt="Wheels">
+                <div class="gallery-overlay">
+                    <h3>Wheel Installation</h3>
+                    <p>Premium wheel upgrades</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="detailing">
+                <img src="WhatsApp Image 2026-01-26 at 11.30.12.jpeg" alt="Ceramic Coating">
+                <div class="gallery-overlay">
+                    <h3>Ceramic Coating</h3>
+                    <p>Long-lasting protection</p>
+                </div>
+            </div>
+            <div class="gallery-item scale-in" data-category="custom">
+                <img src="WhatsApp Image 2026-01-26 at 12.00.19.jpeg" alt="Custom Build">
+                <div class="gallery-overlay">
+                    <h3>Custom Build</h3>
+                    <p>Complete transformation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h2 class="section-title">Before & After Transformations</h2>
+        <div class="before-after-grid">
+            <div class="comparison-card scale-in">
+                <h3>Detailing Transformation</h3>
+                <div class="comparison-images">
+                    <div>
+                        <img src="WhatsApp Image 2026-01-25 at 22.33.00.jpeg" alt="Before">
+                        <div class="comparison-label">Before</div>
+                    </div>
+                    <div>
+                        <img src="WhatsApp Image 2026-01-25 at 22.33.02.jpeg" alt="After">
+                        <div class="comparison-label">After</div>
+                    </div>
+                </div>
+            </div>
+            <div class="comparison-card scale-in">
+                <h3>Engine Restoration</h3>
+                <div class="comparison-images">
+                    <div>
+                        <img src="WhatsApp Image 2026-01-25 at 22.35.24.jpeg" alt="Before">
+                        <div class="comparison-label">Before</div>
+                    </div>
+                    <div>
+                        <img src="WhatsApp Image 2026-01-25 at 22.35.26.jpeg" alt="After">
+                        <div class="comparison-label">After</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street, City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // Gallery filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

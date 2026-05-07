@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .blog-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover .blog-image {
+            transform: scale(1.1);
+        }
+        .blog-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .blog-category {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .blog-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .blog-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .blog-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .blog-link:hover {
+            gap: 1rem;
+        }
+        .featured-post {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        .featured-post .blog-image {
+            height: 100%;
+        }
+        .featured-post .blog-content {
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .newsletter-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            text-align: center;
+        }
+        .newsletter-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .newsletter-form button:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="blog-hero">
+        <h1 class="fade-in">Blog & News</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Stay Updated with Latest Tips, News & Insights</p>
+    </section>
+
+    <section class="blog-section">
+        <div class="blog-container">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="tips">Car Care Tips</button>
+                <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+                <button class="filter-btn" data-filter="news">News</button>
+                <button class="filter-btn" data-filter="guides">Guides</button>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card featured-post scale-in" data-category="tips">
+                    <img src="WhatsApp Image 2026-01-26 at 11.49.07.jpeg" alt="Featured Post" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Car Care Tips</span>
+                            <span>January 26, 2026</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3>10 Essential Winter Car Care Tips to Protect Your Vehicle</h3>
+                        <p>Winter weather can be harsh on your vehicle. Learn the essential tips to keep your car running smoothly during the cold months. From checking your battery to protecting your paint, we cover everything you need to know to maintain your vehicle's performance and appearance throughout winter.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="maintenance">
+                    <img src="WhatsApp Image 2026-01-26 at 11.39.43.jpeg" alt="Maintenance Guide" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Maintenance</span>
+                            <span>January 24, 2026</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3>How Often Should You Service Your Engine?</h3>
+                        <p>Regular engine maintenance is crucial for your vehicle's longevity. Discover the optimal service intervals for different types of engines and learn the warning signs that indicate it's time for a check-up.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="guides">
+                    <img src="WhatsApp Image 2026-01-26 at 11.30.12.jpeg" alt="Ceramic Coating Guide" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Guides</span>
+                            <span>January 22, 2026</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3>Complete Guide to Ceramic Coating: Benefits & Maintenance</h3>
+                        <p>Everything you need to know about ceramic coating - from application process to long-term care. Learn how this protective layer can extend your paint's life and maintain that showroom shine.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="tips">
+                    <img src="WhatsApp Image 2026-01-26 at 11.26.34.jpeg" alt="Interior Care" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Car Care Tips</span>
+                            <span>January 20, 2026</span>
+                            <span>3 min read</span>
+                        </div>
+                        <h3>Interior Detailing: DIY vs Professional Service</h3>
+                        <p>Should you detail your car's interior yourself or hire professionals? We break down the pros and cons of each approach and help you decide what's best for your vehicle and budget.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="news">
+                    <img src="WhatsApp Image 2026-01-26 at 12.00.19.jpeg" alt="Industry News" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">News</span>
+                            <span>January 18, 2026</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3>Latest Automotive Technology Trends in 2026</h3>
+                        <p>Stay ahead of the curve with the latest innovations in automotive technology. From advanced diagnostics to eco-friendly solutions, discover what's shaping the future of car care.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="maintenance">
+                    <img src="WhatsApp Image 2026-01-26 at 11.35.21.jpeg" alt="Tire Maintenance" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Maintenance</span>
+                            <span>January 15, 2026</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3>Tire Maintenance: When to Rotate, Replace & Check Pressure</h3>
+                        <p>Proper tire maintenance is essential for safety and performance. Learn the signs of wear, optimal rotation schedules, and how to maintain proper tire pressure for maximum efficiency.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="tips">
+                    <img src="WhatsApp Image 2026-01-26 at 11.30.10.jpeg" alt="Paint Protection" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Car Care Tips</span>
+                            <span>January 12, 2026</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3>Paint Protection Film vs Ceramic Coating: Which is Right for You?</h3>
+                        <p>Compare two popular paint protection methods and find out which one suits your needs better. We break down costs, durability, and maintenance requirements for both options.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card scale-in" data-category="guides">
+                    <img src="WhatsApp Image 2026-01-26 at 11.31.39.jpeg" alt="Performance Upgrade" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Guides</span>
+                            <span>January 10, 2026</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3>Performance Upgrades: What You Need to Know</h3>
+                        <p>Thinking about upgrading your vehicle's performance? Learn about the most effective modifications, warranty implications, and how to choose the right upgrades for your car.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <h2 class="fade-in" style="font-size: 2.5rem; margin-bottom: 1rem;">Subscribe to Our Newsletter</h2>
+        <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">Get the latest car care tips, exclusive offers, and industry news delivered to your inbox</p>
+        <form class="newsletter-form fade-in">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="blog.html">Blog</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street, City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@apexautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // Blog filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

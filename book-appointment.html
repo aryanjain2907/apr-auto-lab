@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Apex Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .booking-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .booking-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .booking-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .booking-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .booking-form {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .service-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .service-option {
+            background: white;
+            padding: 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .service-option:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .service-option input[type="checkbox"] {
+            display: none;
+        }
+        .service-option input[type="checkbox"]:checked + label {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .service-option.selected {
+            border-color: var(--accent-color);
+            background: rgba(233, 69, 96, 0.1);
+        }
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .time-slot {
+            padding: 0.8rem;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .time-slot:hover {
+            border-color: var(--accent-color);
+        }
+        .time-slot.selected {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        .info-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-box ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .info-box ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APEX AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="booking-hero">
+        <h1 class="fade-in">Book Your Appointment</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Schedule Your Service Today</p>
+    </section>
+
+    <section class="booking-section">
+        <div class="booking-container">
+            <div class="info-box fade-in">
+                <h3>Why Book With Us?</h3>
+                <ul>
+                    <li>Flexible scheduling to fit your busy lifestyle</li>
+                    <li>Same-day appointments available</li>
+                    <li>Transparent pricing with no hidden fees</li>
+                    <li>Professional service guaranteed</li>
+                </ul>
+            </div>
+
+            <div class="booking-form scale-in">
+                <h2 style="color: var(--primary-color); margin-bottom: 2rem; font-size: 2rem; text-align: center;">Appointment Form</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Information *</label>
+                        <div class="form-row">
+                            <input type="text" id="make" name="make" placeholder="Make" required>
+                            <input type="text" id="model" name="model" placeholder="Model" required>
+                            <input type="text" id="year" name="year" placeholder="Year" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Service(s) *</label>
+                        <div class="service-selection">
+                            <div class="service-option">
+                                <input type="checkbox" id="detailing" name="service" value="detailing">
+                                <label for="detailing">Detailing</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="engine" name="service" value="engine">
+                                <label for="engine">Engine Service</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="accessories" name="service" value="accessories">
+                                <label for="accessories">Accessories</label>
+                            </div>
+                            <div class="service-option">
+                                <input type="checkbox" id="repair" name="service" value="repair">
+                                <label for="repair">Repair</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time *</label>
+                            <div class="time-slots">
+                                <div class="time-slot" data-time="08:00">8:00 AM</div>
+                                <div class="time-slot" data-time="10:00">10:00 AM</div>
+                                <div class="time-slot" data-time="12:00">12:00 PM</div>
+                                <div class="time-slot" data-time="14:00">2:00 PM</div>
+                                <div class="time-slot" data-time="16:00">4:00 PM</div>
+                            </div>
+                            <input type="hidden" id="selectedTime" name="time" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Notes</label>
+                        <textarea id="message" name="message" placeholder="Any special requests or information about your vehicle..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Confirm Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Apex Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // Service selection
+        document.querySelectorAll('.service-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+                this.classList.toggle('selected', checkbox.checked);
+            });
+        });
+
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('selectedTime').value = this.dataset.time;
+            });
+        });
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+</body>
+</html>
+

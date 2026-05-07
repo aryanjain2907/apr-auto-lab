@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty & Guarantee - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .warranty-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .warranty-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .warranty-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .warranty-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .warranty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .warranty-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+        .warranty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .warranty-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .warranty-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .warranty-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+        .warranty-card ul li {
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+            line-height: 1.8;
+        }
+        .warranty-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .warranty-duration {
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        .guarantee-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .guarantee-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .guarantee-badge {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+        .guarantee-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .guarantee-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .claim-process {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        .terms-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .terms-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .terms-content h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .terms-content p,
+        .terms-content ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .terms-content ul {
+            padding-left: 2rem;
+        }
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="warranty-hero">
+        <h1 class="fade-in">Warranty & Guarantee</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Your Peace of Mind is Our Priority</p>
+    </section>
+
+    <section class="warranty-section">
+        <div class="warranty-container">
+            <h2 class="section-title">Our Warranty Coverage</h2>
+            <div class="warranty-grid">
+                <div class="warranty-card scale-in">
+                    <div class="warranty-icon">🔧</div>
+                    <h3>Engine Services</h3>
+                    <div class="warranty-duration">12 Months</div>
+                    <p>Comprehensive warranty on all engine repairs and services</p>
+                    <ul>
+                        <li>Parts and labor included</li>
+                        <li>Transferable to new owner</li>
+                        <li>Nationwide coverage</li>
+                        <li>Free re-inspection</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-card scale-in">
+                    <div class="warranty-icon">✨</div>
+                    <h3>Detailing Services</h3>
+                    <div class="warranty-duration">6 Months</div>
+                    <p>Quality guarantee on all detailing work</p>
+                    <ul>
+                        <li>Workmanship guarantee</li>
+                        <li>Touch-up service included</li>
+                        <li>Material defects covered</li>
+                        <li>Customer satisfaction promise</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-card scale-in">
+                    <div class="warranty-icon">🛡️</div>
+                    <h3>Ceramic Coating</h3>
+                    <div class="warranty-duration">2-5 Years</div>
+                    <p>Extended protection warranty on ceramic coating</p>
+                    <ul>
+                        <li>Manufacturer-backed warranty</li>
+                        <li>Hazing and peeling coverage</li>
+                        <li>Annual inspection included</li>
+                        <li>Maintenance guidance provided</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-card scale-in">
+                    <div class="warranty-icon">⚙️</div>
+                    <h3>Accessories & Parts</h3>
+                    <div class="warranty-duration">1 Year</div>
+                    <p>Full warranty on all installed accessories</p>
+                    <ul>
+                        <li>Manufacturer warranty honored</li>
+                        <li>Installation guarantee</li>
+                        <li>Defect replacement</li>
+                        <li>Professional installation verified</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-card scale-in">
+                    <div class="warranty-icon">🎨</div>
+                    <h3>Paint Protection Film</h3>
+                    <div class="warranty-duration">5-10 Years</div>
+                    <p>Long-term protection warranty</p>
+                    <ul>
+                        <li>Yellowing prevention</li>
+                        <li>Peeling and lifting coverage</li>
+                        <li>Professional installation guarantee</li>
+                        <li>Maintenance support</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-card scale-in">
+                    <div class="warranty-icon">🔋</div>
+                    <h3>Basic Services</h3>
+                    <div class="warranty-duration">90 Days</div>
+                    <p>Standard warranty on routine maintenance</p>
+                    <ul>
+                        <li>Oil changes</li>
+                        <li>Filter replacements</li>
+                        <li>Fluid services</li>
+                        <li>Quality assurance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee-section">
+        <div class="guarantee-content fade-in">
+            <div class="guarantee-badge">🛡️</div>
+            <h2>Our 100% Satisfaction Guarantee</h2>
+            <p>At APR Auto Lab, we stand behind our work with complete confidence. If you're not satisfied with any service we provide, we'll make it right - no questions asked.</p>
+            <p>Our guarantee covers workmanship, materials, and your complete satisfaction. We're committed to exceeding your expectations every time you visit us.</p>
+            <p style="font-weight: bold; font-size: 1.3rem; margin-top: 2rem;">That's the APR Auto Lab promise.</p>
+        </div>
+    </section>
+
+    <section class="claim-process">
+        <h2 class="section-title">How to File a Warranty Claim</h2>
+        <div class="process-steps">
+            <div class="process-step fade-in">
+                <div class="step-number">1</div>
+                <h3>Contact Us</h3>
+                <p>Reach out via phone, email, or visit our facility. Have your service receipt ready.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">2</div>
+                <h3>Inspection</h3>
+                <p>We'll schedule a free inspection to assess the issue and verify warranty coverage.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">3</div>
+                <h3>Approval</h3>
+                <p>If covered, we'll approve your claim immediately and schedule the repair.</p>
+            </div>
+            <div class="process-step fade-in">
+                <div class="step-number">4</div>
+                <h3>Resolution</h3>
+                <p>We'll fix the issue at no cost to you and ensure your complete satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="terms-section">
+        <div class="terms-content">
+            <h2 class="section-title">Warranty Terms & Conditions</h2>
+            
+            <h3>What's Covered</h3>
+            <ul>
+                <li>Defects in materials and workmanship</li>
+                <li>Premature failure of installed parts</li>
+                <li>Issues resulting from our service work</li>
+                <li>Manufacturer defects in products we install</li>
+            </ul>
+
+            <h3>What's Not Covered</h3>
+            <ul>
+                <li>Normal wear and tear</li>
+                <li>Damage from accidents or misuse</li>
+                <li>Modifications made by other parties</li>
+                <li>Damage from environmental factors beyond our control</li>
+                <li>Services performed without proper maintenance</li>
+            </ul>
+
+            <h3>Warranty Requirements</h3>
+            <ul>
+                <li>Keep your original service receipt</li>
+                <li>Follow recommended maintenance schedules</li>
+                <li>Use our facility or authorized service centers for related work</li>
+                <li>Report issues promptly within warranty period</li>
+            </ul>
+
+            <h3>Transferability</h3>
+            <p>Most warranties are transferable to new owners with proper documentation. Contact us for transfer procedures.</p>
+
+            <h3>Questions?</h3>
+            <p>If you have any questions about our warranty coverage or need to file a claim, please don't hesitate to <a href="contact.html" style="color: var(--accent-color);">contact us</a>. We're here to help!</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="fade-in" style="font-size: 2.5rem; margin-bottom: 1rem;">Need to File a Claim?</h2>
+        <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">Our team is ready to assist you with any warranty questions or claims</p>
+        <a href="contact.html" class="btn" style="background: white; color: var(--primary-color);">Contact Us</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="warranty.html">Warranty</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street, City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@apexautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .faq-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .faq-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        .faq-category h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        .faq-item {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        .faq-question h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-answer-content {
+            padding: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        .why-choose {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .why-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .why-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .contact-cta {
+            padding: 5rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="faq-hero">
+        <h1 class="fade-in">Frequently Asked Questions</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Everything You Need to Know</p>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-category">
+                <h2 class="slide-in-left">General Questions</h2>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>What services does APR Auto Lab offer?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer comprehensive automotive services including engine diagnostics and repair, premium detailing (interior and exterior), ceramic coating, paint protection, custom accessories installation, performance upgrades, and complete vehicle customization.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>What are your business hours?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We're open Monday through Friday from 8:00 AM to 6:00 PM, and Saturday from 9:00 AM to 5:00 PM. We're closed on Sundays. Emergency services are available 24/7 for urgent repairs.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>Do I need to make an appointment?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            While walk-ins are welcome, we highly recommend making an appointment to ensure we can accommodate you at your preferred time. You can book online through our website or call us directly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="slide-in-left">Detailing Services</h2>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>How long does a detailing service take?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Service duration depends on the package selected. Basic detailing takes 2-3 hours, Premium detailing takes 4-6 hours, and Ultimate detailing with ceramic coating can take 8-12 hours. We'll provide an accurate timeline when you book.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>How often should I get my car detailed?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We recommend a basic detail every 3-4 months, premium detailing every 6 months, and ceramic coating every 2-3 years. However, this depends on your usage, climate, and personal preferences.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>What is ceramic coating and how long does it last?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Ceramic coating is a liquid polymer that bonds with your vehicle's paint, creating a protective layer. It provides superior protection against UV rays, oxidation, and minor scratches. When properly maintained, it can last 2-5 years.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="slide-in-left">Engine Services</h2>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>What types of engine services do you provide?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer comprehensive engine services including diagnostics, oil changes, filter replacements, timing belt service, head gasket repair, engine rebuilds, performance tuning, and complete engine overhauls.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>Do you provide warranties on engine work?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, all our engine services come with a warranty. Basic services include a 90-day warranty, while major repairs and rebuilds come with a 12-month warranty. Warranty details are provided with your service receipt.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>How do I know if my engine needs service?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Warning signs include unusual noises, check engine light, reduced performance, excessive smoke, oil leaks, or if you've exceeded the recommended service interval. We offer free diagnostic checks to identify any issues.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="slide-in-left">Pricing & Payment</h2>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>Do you offer financing options?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, we offer flexible financing options for services over $500. We accept various payment plans and can work with you to find a solution that fits your budget. Contact us for more details.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We accept cash, all major credit cards (Visa, MasterCard, American Express), debit cards, and digital payment methods. We also offer financing through third-party providers for larger services.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item scale-in">
+                    <div class="faq-question">
+                        <h3>Do you provide free estimates?</h3>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! We provide free, no-obligation estimates for all services. Simply bring your vehicle in or contact us, and we'll provide a detailed quote with transparent pricing.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2 class="fade-in" style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">Why Choose Apex Auto Lab?</h2>
+        <div class="why-grid">
+            <div class="why-card fade-in">
+                <div class="why-icon">🏆</div>
+                <h3>15+ Years Experience</h3>
+                <p>Trusted expertise in automotive care</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon">✅</div>
+                <h3>Certified Technicians</h3>
+                <p>ASE certified professionals</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon">💎</div>
+                <h3>Premium Quality</h3>
+                <p>Only the finest products and materials</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon">🛡️</div>
+                <h3>Warranty Guaranteed</h3>
+                <p>Comprehensive warranty on all services</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Transparent, competitive rates</p>
+            </div>
+            <div class="why-card fade-in">
+                <div class="why-icon">⭐</div>
+                <h3>5-Star Rated</h3>
+                <p>98% customer satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <h2 class="fade-in">Still Have Questions?</h2>
+        <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">Our team is here to help. Get in touch with us today!</p>
+        <a href="contact.html" class="btn" style="background: white; color: var(--primary-color);">Contact Us</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

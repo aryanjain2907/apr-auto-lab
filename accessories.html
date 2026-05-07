@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories & Customization - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920') center/cover;
+            opacity: 0.2;
+        }
+        .page-hero h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+        }
+        .category-section {
+            padding: 5rem 2rem;
+        }
+        .category-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .accessory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .accessory-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .accessory-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .accessory-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .accessory-info {
+            padding: 1.5rem;
+        }
+        .accessory-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        .accessory-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .price-tag {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .showcase-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+        }
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .showcase-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        .showcase-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <h1 class="fade-in">Accessories & Customization</h1>
+        <p class="fade-in" style="font-size: 1.3rem; position: relative; z-index: 1;">Personalize Your Ride to Perfection</p>
+    </section>
+
+    <section class="category-section">
+        <h2 class="section-title">Performance Parts</h2>
+        <div class="accessory-grid">
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800" alt="Exhaust System">
+                <div class="accessory-info">
+                    <h3>Performance Exhaust</h3>
+                    <p>Enhance your engine's sound and performance with our premium exhaust systems.</p>
+                    <div class="price-tag">From $299</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800" alt="Cold Air Intake">
+                <div class="accessory-info">
+                    <h3>Cold Air Intakes</h3>
+                    <p>Improve airflow and horsepower with high-performance air intake systems.</p>
+                    <div class="price-tag">From $199</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800" alt="Turbo Kit">
+                <div class="accessory-info">
+                    <h3>Turbo Upgrades</h3>
+                    <p>Boost your engine's power with professional turbo installation and tuning.</p>
+                    <div class="price-tag">From $1,499</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800" alt="Suspension">
+                <div class="accessory-info">
+                    <h3>Suspension Kits</h3>
+                    <p>Upgrade your ride with premium suspension systems for better handling.</p>
+                    <div class="price-tag">From $599</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="section-title">Styling & Aesthetics</h2>
+        <div class="accessory-grid">
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" alt="Body Kit">
+                <div class="accessory-info">
+                    <h3>Body Kits</h3>
+                    <p>Transform your vehicle's appearance with custom body kits and aerodynamic parts.</p>
+                    <div class="price-tag">From $799</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800" alt="Wheels">
+                <div class="accessory-info">
+                    <h3>Wheels & Tires</h3>
+                    <p>Choose from our extensive collection of premium wheels and performance tires.</p>
+                    <div class="price-tag">From $399</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800" alt="LED Lighting">
+                <div class="accessory-info">
+                    <h3>LED Lighting</h3>
+                    <p>Illuminate your ride with custom LED headlights, taillights, and accent lighting.</p>
+                    <div class="price-tag">From $149</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800" alt="Custom Graphics">
+                <div class="accessory-info">
+                    <h3>Custom Graphics</h3>
+                    <p>Make a statement with custom vinyl wraps, decals, and paint jobs.</p>
+                    <div class="price-tag">From $299</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="section-title">Interior Upgrades</h2>
+        <div class="accessory-grid">
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" alt="Seat Covers">
+                <div class="accessory-info">
+                    <h3>Premium Seat Covers</h3>
+                    <p>Protect and enhance your seats with custom-fit premium covers.</p>
+                    <div class="price-tag">From $199</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800" alt="Sound System">
+                <div class="accessory-info">
+                    <h3>Sound Systems</h3>
+                    <p>Upgrade your audio experience with premium speakers and subwoofers.</p>
+                    <div class="price-tag">From $399</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800" alt="Navigation">
+                <div class="accessory-info">
+                    <h3>Navigation Systems</h3>
+                    <p>Stay on track with advanced GPS navigation and infotainment systems.</p>
+                    <div class="price-tag">From $299</div>
+                </div>
+            </div>
+            <div class="accessory-card scale-in">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" alt="Floor Mats">
+                <div class="accessory-info">
+                    <h3>Custom Floor Mats</h3>
+                    <p>Protect your interior with weather-resistant custom floor mats.</p>
+                    <div class="price-tag">From $99</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase-section">
+        <h2 class="fade-in" style="font-size: 2.5rem; margin-bottom: 1rem;">Customization Services</h2>
+        <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">We offer complete customization packages</p>
+        <div class="showcase-grid">
+            <div class="showcase-item fade-in">
+                <h3>🎨 Design Consultation</h3>
+                <p>Work with our experts to create a unique look for your vehicle</p>
+            </div>
+            <div class="showcase-item fade-in">
+                <h3>🔧 Professional Installation</h3>
+                <p>All accessories installed by certified technicians</p>
+            </div>
+            <div class="showcase-item fade-in">
+                <h3>🛡️ Warranty Coverage</h3>
+                <p>Comprehensive warranty on all parts and labor</p>
+            </div>
+        </div>
+        <a href="contact.html" class="btn" style="margin-top: 2rem; background: white; color: var(--primary-color);">Get a Quote</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
+

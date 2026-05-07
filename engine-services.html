@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine Services - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920') center/cover;
+            opacity: 0.2;
+        }
+        .page-hero h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+        }
+        .service-detail {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .service-detail:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .detail-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .detail-text h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .detail-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .detail-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        .features-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+        .features-list li::before {
+            content: '⚙️';
+            position: absolute;
+            left: 0;
+        }
+        .pricing-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        .pricing-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .price {
+            font-size: 3rem;
+            color: var(--gold-color);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <h1 class="fade-in">Engine Services</h1>
+        <p class="fade-in" style="font-size: 1.3rem; position: relative; z-index: 1;">Keep Your Engine Running at Peak Performance</p>
+    </section>
+
+    <section class="service-detail">
+        <div class="detail-content">
+            <div class="detail-text slide-in-left">
+                <h2>Engine Diagnostics</h2>
+                <p>Our state-of-the-art diagnostic equipment allows us to identify issues quickly and accurately. We use advanced scanning tools to read your vehicle's computer systems and detect any problems before they become costly repairs.</p>
+                <ul class="features-list">
+                    <li>Computerized diagnostic scanning</li>
+                    <li>Real-time performance monitoring</li>
+                    <li>Error code analysis</li>
+                    <li>Comprehensive health reports</li>
+                </ul>
+            </div>
+            <div class="detail-image slide-in-right">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800" alt="Engine Diagnostics">
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="detail-content">
+            <div class="detail-image slide-in-left">
+                <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800" alt="Engine Repair">
+            </div>
+            <div class="detail-text slide-in-right">
+                <h2>Engine Repair & Maintenance</h2>
+                <p>From routine maintenance to major repairs, our certified technicians have the expertise to handle all your engine needs. We use only premium parts and follow manufacturer specifications to ensure optimal performance.</p>
+                <ul class="features-list">
+                    <li>Oil changes & filter replacement</li>
+                    <li>Timing belt & chain service</li>
+                    <li>Head gasket replacement</li>
+                    <li>Engine rebuilds & overhauls</li>
+                    <li>Cooling system service</li>
+                    <li>Fuel system cleaning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="detail-content">
+            <div class="detail-text slide-in-left">
+                <h2>Performance Tuning</h2>
+                <p>Enhance your vehicle's power and efficiency with our professional tuning services. We optimize engine parameters to deliver better performance while maintaining reliability.</p>
+                <ul class="features-list">
+                    <li>ECU remapping</li>
+                    <li>Performance chip installation</li>
+                    <li>Air-fuel ratio optimization</li>
+                    <li>Turbo & supercharger tuning</li>
+                </ul>
+            </div>
+            <div class="detail-image slide-in-right">
+                <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800" alt="Performance Tuning">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="pricing-box scale-in">
+            <h3>Engine Service Packages</h3>
+            <p>Starting from</p>
+            <div class="price">$99</div>
+            <p>Basic diagnostic & oil change package</p>
+            <a href="book-appointment.html" class="btn" style="margin-top: 1.5rem; background: white; color: var(--primary-color);">Book Service</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
+

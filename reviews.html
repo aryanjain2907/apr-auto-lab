@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .reviews-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .reviews-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .reviews-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 2px solid var(--accent-color);
+        }
+        .review-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+        .review-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        .stars {
+            color: var(--gold-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .review-text {
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        .rating-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .rating-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        .rating-stat {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+        .rating-stat h3 {
+            font-size: 3rem;
+            color: var(--gold-color);
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .testimonial {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-text {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="reviews-hero">
+        <h1 class="fade-in">What Our Customers Say</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Real Reviews from Real Customers</p>
+    </section>
+
+    <section class="rating-summary">
+        <h2 class="fade-in" style="font-size: 2.5rem; margin-bottom: 1rem;">Overall Rating</h2>
+        <div class="stars" style="font-size: 3rem; margin-bottom: 1rem;">★★★★★</div>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">4.9 out of 5.0</p>
+        <div class="rating-stats">
+            <div class="rating-stat fade-in">
+                <h3>4,850+</h3>
+                <p>Total Reviews</p>
+            </div>
+            <div class="rating-stat fade-in">
+                <h3>98%</h3>
+                <p>Would Recommend</p>
+            </div>
+            <div class="rating-stat fade-in">
+                <h3>4.9/5</h3>
+                <p>Average Rating</p>
+            </div>
+            <div class="rating-stat fade-in">
+                <h3>99%</h3>
+                <p>Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <h2 class="section-title">Recent Reviews</h2>
+        <div class="review-grid">
+            <div class="review-card scale-in">
+                <div class="review-header">
+                    <img src="WhatsApp Image 2026-01-25 at 22.15.40.jpeg" alt="Customer" class="review-avatar">
+                    <div class="review-info">
+                        <h3>Shourya Vats</h3>
+                        <p>Engine Service</p>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Absolutely outstanding service! My car's engine was making strange noises, and the team at APR Auto Lab diagnosed and fixed the issue quickly. Professional, knowledgeable, and reasonably priced. Highly recommend!"</p>
+            </div>
+            <div class="review-card scale-in">
+                <div class="review-header">
+                    <img src="WhatsApp Image 2026-01-25 at 22.10.39.jpeg" alt="Customer" class="review-avatar">
+                    <div class="review-info">
+                        <h3>Krish Dabas</h3>
+                        <p>Premium Detailing</p>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"My car looks brand new after their premium detailing service! The attention to detail is incredible. They even cleaned areas I didn't know existed. Worth every penny!"</p>
+            </div>
+            <div class="review-card scale-in">
+                <div class="review-header">
+                    <img src="WhatsApp Image 2026-01-25 at 22.20.44.jpeg" alt="Customer" class="review-avatar">
+                    <div class="review-info">
+                        <h3>Dhwanik Goela</h3>
+                        <p>Accessories Installation</p>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Had a custom exhaust system installed. The team was professional, the work was flawless, and my car sounds amazing now. Great service from start to finish!"</p>
+            </div>
+            <div class="review-card scale-in">
+                <div class="review-header">
+                    <img src="WhatsApp Image 2026-01-25 at 22.17.29.jpeg" alt="Customer" class="review-avatar">
+                    <div class="review-info">
+                        <h3>Dr.Mansi Agnihotri</h3>
+                        <p>PPF Installation</p>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"I've been coming here for years. They always go above and beyond. The staff is friendly, the service is excellent, and I trust them completely with my vehicle."</p>
+            </div>
+            <div class="review-card scale-in">
+                <div class="review-header">
+                    <img src="WhatsApp Image 2026-01-25 at 22.19.34.jpeg" alt="Customer" class="review-avatar">
+                    <div class="review-info">
+                        <h3>Sarthak Goela</h3>
+                        <p>Ceramic Coating</p>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The ceramic coating service exceeded my expectations. My car's paint looks incredible and the protection is amazing. Professional installation and great value!"</p>
+            </div>
+            <div class="review-card scale-in">
+                <div class="review-header">
+                    <img src="WhatsApp Image 2026-01-25 at 22.21.16.jpeg" alt="Customer" class="review-avatar">
+                    <div class="review-info">
+                        <h3>Sarthak Thakur</h3>
+                        <p>Interior Detailing</p>
+                    </div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"After years of kids and pets, my car's interior was a mess. APR Auto Lab brought it back to life! It looks and smells like new. I'm so impressed!"</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial fade-in">
+            <p class="testimonial-text">"APR Auto Lab has been my go-to place for all car services. Their expertise, professionalism, and commitment to quality is unmatched. I wouldn't trust my vehicle with anyone else!"</p>
+            <p class="testimonial-author">- Dhwanik Goela, Loyal Customer Since 2015</p>
+        </div>
+    </section>
+
+    <section style="padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" class="fade-in">Share Your Experience</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;" class="fade-in">We'd love to hear about your experience with APR Auto Lab</p>
+        <a href="contact.html" class="btn" style="background: white; color: var(--primary-color);">Leave a Review</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
+

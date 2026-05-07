@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Packages - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .pricing-hero {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .pricing-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .pricing-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .pricing-card.featured {
+            border-color: var(--gold-color);
+            transform: scale(1.05);
+        }
+        .pricing-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--gold-color);
+            color: var(--primary-color);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .pricing-header h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .price {
+            font-size: 3rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        .price span {
+            font-size: 1.2rem;
+            color: #999;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        .pricing-features li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .pricing-card:nth-child(1) .pricing-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+        }
+        .pricing-card:nth-child(2) .pricing-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+        }
+        .pricing-card:nth-child(3) .pricing-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+        }
+        .faq-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+        .comparison-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .comparison-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table th:first-child {
+            background: var(--accent-color);
+        }
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        .check-mark {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .value-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .value-calculator {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+        .value-calculator h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .savings-badge {
+            display: inline-block;
+            background: var(--gold-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+        .pricing-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--gold-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        .pricing-note p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.8;
+        }
+        .package-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .comparison-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        .comparison-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        .comparison-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .comparison-card .price-compare {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pricing-hero">
+        <h1 class="fade-in">Pricing & Packages</h1>
+        <p class="fade-in" style="font-size: 1.3rem;">Transparent Pricing for All Services</p>
+        <p class="fade-in" style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">💰 All prices include labor and materials | 💳 Financing available | 🎁 Check our <a href="offers.html" style="color: white; text-decoration: underline;">special offers</a></p>
+    </section>
+
+    <section class="pricing-section">
+        <div class="pricing-tabs">
+            <button class="tab-btn active" data-tab="detailing">Detailing</button>
+            <button class="tab-btn" data-tab="engine">Engine</button>
+            <button class="tab-btn" data-tab="accessories">Accessories</button>
+        </div>
+
+        <div id="detailing-pricing" class="pricing-content">
+            <div class="pricing-grid">
+                <div class="pricing-card scale-in">
+                    <div class="pricing-header">
+                        <h3>Basic Detail</h3>
+                        <div class="price">$149<span style="font-size: 1rem; display: block; margin-top: 0.5rem; opacity: 0.8;">2-3 hours</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Exterior hand wash</li>
+                        <li>Wax application</li>
+                        <li>Interior vacuum</li>
+                        <li>Dashboard cleaning</li>
+                        <li>Window cleaning</li>
+                        <li>6-month warranty</li>
+                    </ul>
+                    <div class="pricing-note">
+                        <p style="font-size: 0.9rem;">Perfect for regular maintenance</p>
+                    </div>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+                <div class="pricing-card featured scale-in">
+                    <div class="pricing-header">
+                        <h3>Premium Detail<span class="savings-badge">Save $50</span></h3>
+                        <div class="price">$299<span style="font-size: 1rem; display: block; margin-top: 0.5rem; opacity: 0.8;">4-6 hours</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in Basic</li>
+                        <li>Paint correction</li>
+                        <li>Leather conditioning</li>
+                        <li>Engine bay cleaning</li>
+                        <li>Headlight restoration</li>
+                        <li>Interior deep clean</li>
+                        <li>1-year warranty</li>
+                    </ul>
+                    <div class="pricing-note">
+                        <p style="font-size: 0.9rem;">Most popular choice - Best value!</p>
+                    </div>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+                <div class="pricing-card scale-in">
+                    <div class="pricing-header">
+                        <h3>Ultimate Detail</h3>
+                        <div class="price">$499<span style="font-size: 1rem; display: block; margin-top: 0.5rem; opacity: 0.8;">8-12 hours</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in Premium</li>
+                        <li>Ceramic coating</li>
+                        <li>Paint protection film</li>
+                        <li>Full interior restoration</li>
+                        <li>Odor elimination</li>
+                        <li>2-5 year warranty</li>
+                        <li>Free annual inspection</li>
+                    </ul>
+                    <div class="pricing-note">
+                        <p style="font-size: 0.9rem;">Ultimate protection & transformation</p>
+                    </div>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="engine-pricing" class="pricing-content" style="display: none;">
+            <div class="pricing-grid">
+                <div class="pricing-card scale-in">
+                    <div class="pricing-header">
+                        <h3>Basic Service</h3>
+                        <div class="price">$99</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Oil change</li>
+                        <li>Filter replacement</li>
+                        <li>Basic inspection</li>
+                        <li>Fluid top-up</li>
+                    </ul>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+                <div class="pricing-card featured scale-in">
+                    <div class="pricing-header">
+                        <h3>Full Service</h3>
+                        <div class="price">$249</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in Basic</li>
+                        <li>Engine diagnostics</li>
+                        <li>Spark plug replacement</li>
+                        <li>Coolant flush</li>
+                        <li>Belt inspection</li>
+                    </ul>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+                <div class="pricing-card scale-in">
+                    <div class="pricing-header">
+                        <h3>Premium Service</h3>
+                        <div class="price">$499</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in Full</li>
+                        <li>Complete tune-up</li>
+                        <li>Timing belt service</li>
+                        <li>Fuel system cleaning</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="accessories-pricing" class="pricing-content" style="display: none;">
+            <div class="pricing-grid">
+                <div class="pricing-card scale-in">
+                    <div class="pricing-header">
+                        <h3>Starter Package</h3>
+                        <div class="price">$199</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Floor mats</li>
+                        <li>Seat covers</li>
+                        <li>Basic LED lights</li>
+                        <li>Installation included</li>
+                    </ul>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+                <div class="pricing-card featured scale-in">
+                    <div class="pricing-header">
+                        <h3>Performance Package</h3>
+                        <div class="price">$799</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Cold air intake</li>
+                        <li>Performance exhaust</li>
+                        <li>ECU tuning</li>
+                        <li>Professional installation</li>
+                    </ul>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+                <div class="pricing-card scale-in">
+                    <div class="pricing-header">
+                        <h3>Ultimate Package</h3>
+                        <div class="price">$1,999</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Full body kit</li>
+                        <li>Wheel & tire upgrade</li>
+                        <li>Custom paint</li>
+                        <li>Complete transformation</li>
+                    </ul>
+                    <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block;">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <h2 class="section-title">Package Comparison</h2>
+        <div class="comparison-table scale-in">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Basic Detail</th>
+                        <th>Premium Detail</th>
+                        <th>Ultimate Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Exterior Hand Wash</strong></td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wax Application</strong></td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interior Vacuum</strong></td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paint Correction</strong></td>
+                        <td>—</td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leather Conditioning</strong></td>
+                        <td>—</td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Engine Bay Cleaning</strong></td>
+                        <td>—</td>
+                        <td><span class="check-mark">✓</span></td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ceramic Coating</strong></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paint Protection Film</strong></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td><span class="check-mark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Warranty</strong></td>
+                        <td>6 months</td>
+                        <td>1 year</td>
+                        <td>2-5 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Price</strong></td>
+                        <td>$149</td>
+                        <td>$299</td>
+                        <td>$499</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="value-section">
+        <div class="value-calculator fade-in">
+            <h2>Calculate Your Savings</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">See how much you save with our package deals compared to individual services</p>
+            <div class="package-comparison">
+                <div class="comparison-card">
+                    <h4>Individual Services</h4>
+                    <div class="price-compare">$450+</div>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">If purchased separately</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Premium Package</h4>
+                    <div class="price-compare">$299</div>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">All-inclusive package</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Your Savings</h4>
+                    <div class="price-compare" style="color: var(--gold-color);">$151+</div>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Save over 33%!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Pricing FAQ</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="faq-item fade-in">
+                <div class="faq-question">Do you offer financing options?</div>
+                <div class="faq-answer">Yes, we offer flexible financing options for services over $500. We work with multiple financing partners to provide you with the best rates. Contact us for more details and to see if you qualify.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">Are prices negotiable?</div>
+                <div class="faq-answer">Our prices are competitive and transparent. We offer package deals, seasonal discounts, and special promotions. Check our <a href="offers.html" style="color: var(--accent-color);">special offers page</a> for current deals.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">Do you provide quotes?</div>
+                <div class="faq-answer">Absolutely! We provide free, no-obligation estimates for all services. Schedule a consultation today and we'll provide a detailed quote with transparent pricing.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">We accept cash, all major credit cards (Visa, MasterCard, American Express), debit cards, and digital payment methods. Financing is also available for qualifying customers.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">Do you offer discounts for multiple vehicles?</div>
+                <div class="faq-answer">Yes! We offer fleet discounts for multiple vehicles. Contact us to discuss volume pricing for your business or family vehicles.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">Are there any hidden fees?</div>
+                <div class="faq-answer">No hidden fees! All prices are transparent and include labor and materials. We'll always discuss any additional work or costs before proceeding.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // Tab switching
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const pricingContents = document.querySelectorAll('.pricing-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.dataset.tab;
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                pricingContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                document.getElementById(`${tab}-pricing`).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers & Promotions - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .offers-hero {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .offers-hero::before {
+            content: '🎁';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+        }
+        .offers-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .offers-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        .offers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .offer-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .offer-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .offer-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .offer-banner .discount {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--gold-color);
+            margin: 1rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        .offer-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .offer-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .offer-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+        .offer-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .offer-content {
+            padding: 2rem;
+        }
+        .offer-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .offer-price {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .offer-price .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 1.2rem;
+        }
+        .offer-price .new-price {
+            color: var(--accent-color);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .offer-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .offer-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+        .offer-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+        .offer-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .expiry-date {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            color: #666;
+            font-weight: bold;
+        }
+        .loyalty-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .loyalty-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .loyalty-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .loyalty-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .loyalty-benefit {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        .loyalty-benefit h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .referral-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .referral-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .referral-content h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .referral-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        .referral-box h3 {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .referral-box p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="offers-hero">
+        <h1 class="fade-in">Special Offers & Promotions</h1>
+        <p class="fade-in" style="font-size: 1.3rem; position: relative; z-index: 1;">Exclusive Deals Just for You</p>
+    </section>
+
+    <section class="offers-section">
+        <div class="offers-container">
+            <div class="offer-banner fade-in">
+                <h2>🎉 Holi Special</h2>
+                <div class="discount">25% OFF</div>
+                <p>On all Premium Detailing Packages</p>
+                <p style="font-size: 1rem; opacity: 0.9;">Valid until February 28, 2026</p>
+                <a href="book-appointment.html" class="btn" style="background: white; color: var(--primary-color); margin-top: 1rem;">Claim Offer</a>
+            </div>
+
+            <h2 class="section-title">Current Promotions</h2>
+            <div class="offers-grid">
+                <div class="offer-card scale-in">
+                    <span class="offer-badge">Limited Time</span>
+                    <img src="WhatsApp Image 2026-01-26 at 11.49.07.jpeg" alt="Detailing Offer" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Winter Detailing Package</h3>
+                        <div class="offer-price">
+                            <span class="old-price">$299</span>
+                            <span class="new-price">$199</span>
+                        </div>
+                        <p>Protect your vehicle from winter elements with our comprehensive detailing package.</p>
+                        <ul class="offer-features">
+                            <li>Exterior wash & wax</li>
+                            <li>Interior deep clean</li>
+                            <li>Underbody protection</li>
+                            <li>Free inspection</li>
+                        </ul>
+                        <div class="expiry-date">Expires: March 15, 2026</div>
+                        <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="offer-card scale-in">
+                    <span class="offer-badge">Hot Deal</span>
+                    <img src="WhatsApp Image 2026-01-26 at 11.39.43.jpeg" alt="Engine Service" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Engine Service Bundle</h3>
+                        <div class="offer-price">
+                            <span class="old-price">$399</span>
+                            <span class="new-price">$299</span>
+                        </div>
+                        <p>Complete engine service package at an unbeatable price.</p>
+                        <ul class="offer-features">
+                            <li>Oil change & filter</li>
+                            <li>Engine diagnostics</li>
+                            <li>Coolant flush</li>
+                            <li>Spark plug check</li>
+                        </ul>
+                        <div class="expiry-date">Expires: February 28, 2026</div>
+                        <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="offer-card scale-in">
+                    <span class="offer-badge">Best Value</span>
+                    <img src="WhatsApp Image 2026-01-26 at 11.30.12.jpeg" alt="Ceramic Coating" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Ceramic Coating Special</h3>
+                        <div class="offer-price">
+                            <span class="old-price">$1,299</span>
+                            <span class="new-price">$999</span>
+                        </div>
+                        <p>Premium ceramic coating with extended warranty - save $300!</p>
+                        <ul class="offer-features">
+                            <li>Full vehicle coating</li>
+                            <li>5-year warranty</li>
+                            <li>Free annual inspection</li>
+                            <li>Maintenance kit included</li>
+                        </ul>
+                        <div class="expiry-date">Expires: March 31, 2026</div>
+                        <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="offer-card scale-in">
+                    <span class="offer-badge">Student Discount</span>
+                    <img src="WhatsApp Image 2026-01-26 at 11.26.34.jpeg" alt="Student Offer" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Student Special</h3>
+                        <div class="offer-price">
+                            <span class="old-price">$149</span>
+                            <span class="new-price">$99</span>
+                        </div>
+                        <p>Exclusive discount for students - show your ID and save!</p>
+                        <ul class="offer-features">
+                            <li>Basic detailing service</li>
+                            <li>Valid student ID required</li>
+                            <li>All vehicle types</li>
+                            <li>No expiration</li>
+                        </ul>
+                        <div class="expiry-date">Ongoing Offer</div>
+                        <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="offer-card scale-in">
+                    <span class="offer-badge">Bundle Deal</span>
+                    <img src="WhatsApp Image 2026-01-26 at 11.35.21.jpeg" alt="Package Deal" class="offer-image">
+                    <div class="offer-content">
+                        <h3>Complete Care Package</h3>
+                        <div class="offer-price">
+                            <span class="old-price">$599</span>
+                            <span class="new-price">$449</span>
+                        </div>
+                        <p>Everything your car needs in one comprehensive package.</p>
+                        <ul class="offer-features">
+                            <li>Premium detailing</li>
+                            <li>Engine service</li>
+                            <li>Wheel alignment</li>
+                            <li>Free inspection</li>
+                        </ul>
+                        <div class="expiry-date">Expires: March 20, 2026</div>
+                        <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="offer-card scale-in">
+                    <span class="offer-badge">First Time</span>
+                    <img src="WhatsApp Image 2026-01-26 at 12.00.19.jpeg" alt="New Customer" class="offer-image">
+                    <div class="offer-content">
+                        <h3>New Customer Welcome</h3>
+                        <div class="offer-price">
+                            <span class="old-price">$199</span>
+                            <span class="new-price">$149</span>
+                        </div>
+                        <p>Special welcome offer for first-time customers!</p>
+                        <ul class="offer-features">
+                            <li>Premium detailing</li>
+                            <li>Free consultation</li>
+                            <li>Complimentary inspection</li>
+                            <li>Loyalty program enrollment</li>
+                        </ul>
+                        <div class="expiry-date">One-time offer</div>
+                        <a href="book-appointment.html" class="btn" style="width: 100%; text-align: center; display: block; margin-top: 1rem;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="loyalty-section">
+        <div class="loyalty-content fade-in">
+            <h2>APR Auto Lab Loyalty Program</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Earn points with every service and enjoy exclusive rewards!</p>
+            <div class="loyalty-benefits">
+                <div class="loyalty-benefit fade-in">
+                    <h3>🎁 Points System</h3>
+                    <p>Earn 1 point for every $1 spent. Redeem points for discounts and free services.</p>
+                </div>
+                <div class="loyalty-benefit fade-in">
+                    <h3>⭐ VIP Status</h3>
+                    <p>Reach VIP status and enjoy priority booking, exclusive offers, and special events.</p>
+                </div>
+                <div class="loyalty-benefit fade-in">
+                    <h3>🎉 Birthday Rewards</h3>
+                    <p>Get special birthday discounts and complimentary services as a loyalty member.</p>
+                </div>
+                <div class="loyalty-benefit fade-in">
+                    <h3>💎 Exclusive Access</h3>
+                    <p>Early access to new services, special promotions, and member-only events.</p>
+                </div>
+            </div>
+            <a href="contact.html" class="btn" style="background: white; color: var(--primary-color); margin-top: 3rem;">Join Now</a>
+        </div>
+    </section>
+
+    <section class="referral-section">
+        <div class="referral-content">
+            <h2 class="fade-in">Refer a Friend Program</h2>
+            <div class="referral-box scale-in">
+                <h3>Earn $50 for Every Referral!</h3>
+                <p>Love our service? Share it with friends and family! When someone you refer books a service over $200, you both get $50 credit towards your next service.</p>
+                <p style="font-weight: bold; color: var(--accent-color);">It's that simple - no limits, no expiration!</p>
+                <a href="contact.html" class="btn" style="margin-top: 1rem;">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="offers.html">Special Offers</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - APR Auto Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .services-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        .service-category {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        .service-category:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .category-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+        .service-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .service-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .service-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .service-item ul li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .service-item ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">APR AUTO LAB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <h1 class="fade-in">Comprehensive Automotive Services</h1>
+        <p class="fade-in">Everything Your Vehicle Needs Under One Roof</p>
+    </section>
+
+    <section class="service-category">
+        <div class="category-header">
+            <h2 class="slide-in-left">Engine Services</h2>
+            <p style="color: #666; font-size: 1.1rem;">Complete engine care and maintenance</p>
+        </div>
+        <div class="service-list">
+            <div class="service-item scale-in">
+                <h3>Engine Diagnostics</h3>
+                <ul>
+                    <li>Computerized diagnostic scanning</li>
+                    <li>Performance analysis</li>
+                    <li>Error code reading</li>
+                    <li>Comprehensive engine health check</li>
+                </ul>
+            </div>
+            <div class="service-item scale-in">
+                <h3>Engine Repair</h3>
+                <ul>
+                    <li>Timing belt replacement</li>
+                    <li>Head gasket repair</li>
+                    <li>Engine rebuilds</li>
+                    <li>Oil leak repairs</li>
+                </ul>
+            </div>
+            <div class="service-item scale-in">
+                <h3>Maintenance</h3>
+                <ul>
+                    <li>Oil changes</li>
+                    <li>Filter replacements</li>
+                    <li>Coolant flush</li>
+                    <li>Spark plug service</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-category">
+        <div class="category-header">
+            <h2 class="slide-in-right">Detailing Services</h2>
+            <p style="color: #666; font-size: 1.1rem;">Restore your vehicle's showroom shine</p>
+        </div>
+        <div class="service-list">
+            <div class="service-item scale-in">
+                <h3>Interior Detailing</h3>
+                <ul>
+                    <li>Deep vacuum cleaning</li>
+                    <li>Leather conditioning</li>
+                    <li>Dashboard restoration</li>
+                    <li>Odor removal</li>
+                </ul>
+            </div>
+            <div class="service-item scale-in">
+                <h3>Exterior Detailing</h3>
+                <ul>
+                    <li>Hand wash & wax</li>
+                    <li>Paint correction</li>
+                    <li>Ceramic coating</li>
+                    <li>Headlight restoration</li>
+                </ul>
+            </div>
+            <div class="service-item scale-in">
+                <h3>Premium Packages</h3>
+                <ul>
+                    <li>Full service detailing</li>
+                    <li>Paint protection film</li>
+                    <li>Window tinting</li>
+                    <li>Custom paint jobs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-category">
+        <div class="category-header">
+            <h2 class="slide-in-left">Accessories & Customization</h2>
+            <p style="color: #666; font-size: 1.1rem;">Personalize your ride</p>
+        </div>
+        <div class="service-list">
+            <div class="service-item scale-in">
+                <h3>Performance Parts</h3>
+                <ul>
+                    <li>Exhaust systems</li>
+                    <li>Cold air intakes</li>
+                    <li>Turbo upgrades</li>
+                    <li>Suspension kits</li>
+                </ul>
+            </div>
+            <div class="service-item scale-in">
+                <h3>Styling Accessories</h3>
+                <ul>
+                    <li>Body kits</li>
+                    <li>Wheels & tires</li>
+                    <li>LED lighting</li>
+                    <li>Custom graphics</li>
+                </ul>
+            </div>
+            <div class="service-item scale-in">
+                <h3>Interior Upgrades</h3>
+                <ul>
+                    <li>Seat covers</li>
+                    <li>Floor mats</li>
+                    <li>Sound systems</li>
+                    <li>Navigation systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="fade-in">Ready to Get Started?</h2>
+        <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">Book your service today and experience the APR Auto Lab difference</p>
+        <a href="book-appointment.html" class="btn" style="background: white; color: var(--primary-color);">Book Appointment</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>APR Auto Lab</h3>
+                <p>Your trusted partner in automotive excellence. We provide comprehensive car services from engine maintenance to premium detailing.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Auto Street,Chicago City, State 12345</p>
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ info@aprautolab.com</p>
+                <p>🕒 Mon-Sat: 8AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 APR Auto Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
+
